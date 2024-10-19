@@ -1,0 +1,7 @@
+/vendor
+/.idea
+db-test.sqlite
+test.txt
+.phpunit.result.cache
+composer.phar
+config/cache

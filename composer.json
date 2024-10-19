@@ -1,0 +1,17 @@
+{
+  "autoload": {
+    "psr-4": {
+      "": "src/",
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "doctrine/orm": "^2.11.0",
+    "doctrine/cache": "^1.11",
+    "doctrine/dbal": "^3.2",
+    "doctrine/annotations": "1.13.2",
+    "phpunit/phpunit": "^9.2",
+    "spatie/laravel-data": "^4.10"
+  }
+}
