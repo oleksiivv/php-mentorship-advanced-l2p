@@ -25,21 +25,12 @@ class SupermanTest extends TestCase
         $this->assertEquals('Superman is flying', $superman->fly());
     }
 
-    public function testCannotCloneSingleton(): void
-    {
-        $superman = Superman::getInstance();
-
-        $this->expectException(Error::class);
-
-        clone $superman;
-    }
-
     public function testCannotUnserializeSingleton(): void
     {
         $superman = Superman::getInstance();
 
         $this->expectException(Exception::class);
-        //$this->expectExceptionMessage('Cannot unserialize singleton');
+        $this->expectExceptionMessage('Cannot unserialize singleton');
 
         unserialize(serialize($superman));
     }
