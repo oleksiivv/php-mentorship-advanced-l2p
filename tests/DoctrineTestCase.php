@@ -19,7 +19,7 @@ trait DoctrineTestCase
         $useSimpleAnnotationReader = false;
 
         $config = Setup::createAnnotationMetadataConfiguration(
-            [__DIR__ . './../src/Entities'], $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader
+            [__DIR__ . '/./../src/Entities'], $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader
         );
 
         $connection = [

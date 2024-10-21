@@ -4,19 +4,11 @@ namespace DesignPatterns\AbstractFactory;
 
 use Entities\Person;
 use Doctrine\ORM\EntityManagerInterface;
-use DesignPatterns\AbstractFactory\DTO\PersonRepositoryData;
 
 class PersonDBRepository implements PersonRepositoryInterface
 {
-    private EntityManagerInterface $entityManager;
-
-    public function __construct(PersonRepositoryData $personRepositoryData)
+    public function __construct(private EntityManagerInterface $entityManager)
     {
-        if (!isset($personRepositoryData->entityManager)) {
-            throw new Exception('Invalid configuration provided');
-        }
-
-        $this->entityManager = $personRepositoryData->entityManager;
     }
 
     public function savePerson(Person $person): void

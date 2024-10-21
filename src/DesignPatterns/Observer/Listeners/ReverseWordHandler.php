@@ -4,7 +4,7 @@ namespace DesignPatterns\Observer\Listeners;
 
 class ReverseWordHandler implements TextScannerListenerInterface
 {
-    public array $reveredWords;
+    public array $reversedWords;
 
     public function __construct()
     {

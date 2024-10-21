@@ -3,6 +3,9 @@
 namespace Tests\DesignPatterns\AbstractFactory;
 
 use DesignPatterns\AbstractFactory\Controllers\PersonController;
+use DesignPatterns\AbstractFactory\Factories\DBRepositoryFactory;
+use DesignPatterns\AbstractFactory\Factories\FSRepositoryFactory;
+use DesignPatterns\AbstractFactory\Factories\RepositoryFactoryInterface;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Entities\Person;
 use PHPUnit\Framework\TestCase;
@@ -29,11 +32,11 @@ class PersonControllerTest extends TestCase
     }
 
     /**
-     * @dataProvider storageTypeProvider
+     * @dataProvider repositoryFactoryProvider
      */
-    public function testSaveAndReadPeople(string $storageType): void
+    public function testSaveAndReadPeople(RepositoryFactoryInterface $repositoryFactory): void
     {
-        $controller = new PersonController($storageType, $this->personRepositoryData);
+        $controller = new PersonController($repositoryFactory, $this->personRepositoryData);
 
         $personName = 'John Doe';
 
@@ -46,11 +49,11 @@ class PersonControllerTest extends TestCase
     }
 
     /**
-     * @dataProvider storageTypeProvider
+     * @dataProvider repositoryFactoryProvider
      */
-    public function testSaveAndReadPerson(string $storageType): void
+    public function testSaveAndReadPerson(RepositoryFactoryInterface $repositoryFactory): void
     {
-        $controller = new PersonController($storageType, $this->personRepositoryData);
+        $controller = new PersonController($repositoryFactory, $this->personRepositoryData);
 
         $personName = 'John Doe';
 
@@ -61,11 +64,11 @@ class PersonControllerTest extends TestCase
         $this->assertSame($personName, $result->getName());
     }
 
-    public function storageTypeProvider(): array
+    public function repositoryFactoryProvider(): array
     {
         return [
-            'DB Storage' => [PersonRepositoryInterface::DB_STORAGE],
-            'FS Storage' => [PersonRepositoryInterface::FS_STORAGE],
+            'DB Storage' => [new DBRepositoryFactory()],
+            'FS Storage' => [new FSRepositoryFactory()],
         ];
     }
 }

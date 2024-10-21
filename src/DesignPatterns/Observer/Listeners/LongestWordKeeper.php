@@ -13,6 +13,11 @@ class LongestWordKeeper implements TextScannerListenerInterface
 
     public function execute(string $word): void
     {
+        if ($this->longestWord === null) {
+            $this->longestWord = $word;
+            return;
+        }
+
         if (strlen($word) > strlen($this->longestWord)) {
             $this->longestWord = $word;
         }

@@ -2,9 +2,8 @@
 
 namespace DesignPatterns\AbstractFactory\Controllers;
 
+use DesignPatterns\AbstractFactory\Factories\RepositoryFactoryInterface;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
-use DesignPatterns\AbstractFactory\PersonDBRepository;
-use DesignPatterns\AbstractFactory\PersonFSRepository;
 use Entities\Person;
 use DesignPatterns\AbstractFactory\DTO\PersonRepositoryData;
 
@@ -12,13 +11,11 @@ class PersonController
 {
     private PersonRepositoryInterface $personRepository;
 
-    public function __construct(string $storageType, PersonRepositoryData $personRepositoryData)
-    {
-        $this->personRepository = match ($storageType) {
-            PersonRepositoryInterface::DB_STORAGE => new PersonDBRepository($personRepositoryData),
-            PersonRepositoryInterface::FS_STORAGE => new PersonFSRepository($personRepositoryData),
-            default => throw new \Exception('Invalid storage type provided'),
-        };
+    public function __construct(
+        RepositoryFactoryInterface $repositoryFactory,
+        PersonRepositoryData $personRepositoryData
+    ) {
+        $this->personRepository = $repositoryFactory->createPersonRepository($personRepositoryData);
     }
 
     public function savePerson(string $name): void

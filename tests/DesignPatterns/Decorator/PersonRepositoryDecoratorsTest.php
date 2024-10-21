@@ -16,9 +16,7 @@ class PersonRepositoryDecoratorsTest extends TestCase
 
     public function test_uppercase_saved_and_lowercase_returned(): void
     {
-        $personRepository = new PersonDBRepository(
-            new PersonRepositoryData(filename:null, entityManager:$this->getEntityManager())
-        );
+        $personRepository = new PersonDBRepository($this->getEntityManager());
 
         $personName = 'Tom';
         $person = new Person($personName);

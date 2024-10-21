@@ -3,20 +3,11 @@
 namespace DesignPatterns\AbstractFactory;
 
 use Entities\Person;
-use DesignPatterns\AbstractFactory\DTO\PersonRepositoryData;
-use Exception;
 
 class PersonFSRepository implements PersonRepositoryInterface
 {
-    private string $fileName;
-
-    public function __construct(PersonRepositoryData $personRepositoryData)
+    public function __construct(private string $fileName)
     {
-        if (!isset($personRepositoryData->filename)) {
-            throw new Exception('Invalid configuration provided');
-        }
-
-        $this->fileName = $personRepositoryData->filename;
     }
 
     public function savePerson(Person $person): void
