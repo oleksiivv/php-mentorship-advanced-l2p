@@ -12,7 +12,7 @@ class InMemoryStringIterator implements StringIteratorInterface
         $this->strings = $strings;
     }
 
-    public function hasNext() : bool
+    public function hasNext(): bool
     {
         return $this->currentIndex < count($this->strings);
     }

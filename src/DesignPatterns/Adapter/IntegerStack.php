@@ -18,7 +18,7 @@ class IntegerStack implements IntegerStackInterface
         if (empty($this->stack)) {
             throw new RuntimeException('Stack is empty');
         }
-        
+
         return array_pop($this->stack);
     }
 }

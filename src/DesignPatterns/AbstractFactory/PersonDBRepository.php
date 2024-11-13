@@ -20,7 +20,7 @@ class PersonDBRepository implements PersonRepositoryInterface
     public function readPeople(): array
     {
         $repository = $this->entityManager->getRepository(Person::class);
-        
+
         return $repository->findAll();
     }
 

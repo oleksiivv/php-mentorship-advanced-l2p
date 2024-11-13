@@ -21,7 +21,7 @@ class LowerCaseReadPersonDecorator implements PersonRepositoryInterface
     public function readPeople(): array
     {
         $peoples = $this->personRepository->readPeople();
-        
+
         return array_map(function (Person $person) {
             return $this->formatPerson($person);
         }, $peoples);

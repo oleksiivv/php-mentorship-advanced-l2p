@@ -10,7 +10,7 @@ class WordCounter implements TextScannerListenerInterface
     {
         $this->count = 0;
     }
-    
+
     public function execute(string $word): void
     {
         $this->count += 1;

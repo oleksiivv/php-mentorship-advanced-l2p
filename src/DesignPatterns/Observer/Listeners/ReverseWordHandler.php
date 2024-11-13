@@ -10,7 +10,7 @@ class ReverseWordHandler implements TextScannerListenerInterface
     {
         $this->reversedWords = [];
     }
-    
+
     public function execute(string $word): void
     {
         $this->reversedWords[] = strrev($word);

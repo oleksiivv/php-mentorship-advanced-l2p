@@ -29,14 +29,15 @@ class TextScanner
                     $this->notifyListeners($word);
                 }
             }
-            
+
             fclose($handle);
         } else {
             throw new Exception('Unable to open file: $filename');
         }
     }
-    
-    private function notifyListeners(string $word) {
+
+    private function notifyListeners(string $word)
+    {
         foreach ($this->listeners as $listener) {
             $listener->execute($word);
         }
