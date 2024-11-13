@@ -11,14 +11,18 @@ $cache = null;
 $useSimpleAnnotationReader = false;
 
 $config = Setup::createAnnotationMetadataConfiguration(
-    [__DIR__ . './../src/Entities'], $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader
+    [__DIR__ . './../src/Entities'],
+    $isDevMode,
+    $proxyDir,
+    $cache,
+    $useSimpleAnnotationReader
 );
 
 $connection = [
-    'driver' => 'pdo_mysql',
-    'user' => 'root',
-    'host' => 'localhost',
-    'dbname' => 'php_mentorship',
+    'driver' => 'pdo_sqlite',
+    'path' => 'db-test.sqlite',
 ];
 
 $entityManager = EntityManager::create($connection, $config);
+
+return $entityManager;
