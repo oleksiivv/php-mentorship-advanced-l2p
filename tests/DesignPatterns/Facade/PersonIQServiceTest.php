@@ -36,7 +36,7 @@ class PersonIQServiceTest extends TestCase
             ]);
 
         $result = $this->personIQService->whoIsTheSmarter('Jane', 'Joe');
-        
+
         $this->assertSame($person1, $result);
     }
 
@@ -71,7 +71,7 @@ class PersonIQServiceTest extends TestCase
 
         $this->personRepositoryMock->method('readPerson')
             ->willReturn($person1);
-        
+
         $this->personRepositoryMock->expects($this->once())
             ->method('updatePersonIQ')
             ->with($this->equalTo($person1), $this->equalTo(60));

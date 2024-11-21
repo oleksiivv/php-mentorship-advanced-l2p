@@ -42,6 +42,6 @@ class FileStringCollectionTest extends TestCase
         }
 
         $this->assertInstanceOf(StringIteratorInterface::class, $iterator);
-        $this->assertSame($this->fileContent,implode(',',  $collectedStrings));
+        $this->assertSame($this->fileContent, implode(',', $collectedStrings));
     }
 }

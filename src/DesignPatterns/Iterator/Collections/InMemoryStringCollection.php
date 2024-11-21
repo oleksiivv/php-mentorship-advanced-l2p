@@ -9,7 +9,8 @@ class InMemoryStringCollection implements StringCollectionInterface
 {
     private array $strings;
 
-    public function __construct(array $strings) {
+    public function __construct(array $strings)
+    {
         $this->strings = $strings;
     }
 

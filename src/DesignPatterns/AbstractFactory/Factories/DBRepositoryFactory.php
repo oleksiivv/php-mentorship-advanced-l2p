@@ -14,7 +14,7 @@ class DBRepositoryFactory implements RepositoryFactoryInterface
         if (! isset($data->entityManager)) {
             throw new Exception('Invalid data provided');
         }
-        
+
         return new PersonDBRepository($data->entityManager);
     }
 }

@@ -3,7 +3,6 @@
 namespace Tests\DesignPatterns\Composite;
 
 use PHPUnit\Framework\TestCase;
-
 use DesignPatterns\Composite\Directory;
 use DesignPatterns\Composite\File;
 
@@ -13,7 +12,7 @@ class DirectoryTest extends TestCase
     {
         $directory = new Directory('MainDirectory');
 
-        $file = new File('TestFile1.txt', 100);    
+        $file = new File('TestFile1.txt', 100);
 
         $subDirectory = new Directory('SubDirectory');
         $subDirectoryFile = new File('TestFile2.txt', 300);
@@ -23,7 +22,7 @@ class DirectoryTest extends TestCase
         $directory->add($subDirectory);
 
         $content = $directory->listContent();
-        
+
         $this->assertCount(2, $content);
         $this->assertSame($file, $content[0]);
         $this->assertSame($subDirectory, $content[1]);
@@ -42,7 +41,7 @@ class DirectoryTest extends TestCase
 
         $directory->remove($file1);
         $content = $directory->listContent();
-        
+
         $this->assertCount(1, $content);
         $this->assertSame($file2, $content[0]);
     }
@@ -58,7 +57,7 @@ class DirectoryTest extends TestCase
         $directory->add($file2);
 
         $size = $directory->getSize();
-        
+
         $this->assertEquals(300, $size);
     }
 }

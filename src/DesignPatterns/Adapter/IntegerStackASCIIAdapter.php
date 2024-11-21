@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Adapter;
 
+use Throwable;
+
 class IntegerStackASCIIAdapter implements ASCIIStackInterface
 {
     private IntegerStackInterface $integerStack;
@@ -22,7 +24,7 @@ class IntegerStackASCIIAdapter implements ASCIIStackInterface
         try {
             $asciiValue = $this->integerStack->pop();
             return chr($asciiValue);
-        } catch (RuntimeException $e) {
+        } catch (Throwable $e) {
             return null;
         }
     }

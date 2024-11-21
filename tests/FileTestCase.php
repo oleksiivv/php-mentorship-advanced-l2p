@@ -17,11 +17,11 @@ trait FileTestCase
             file_put_contents($filename, '');
         } else {
             $directory = dirname($filename);
-            
+
             if (!is_dir($directory)) {
                 mkdir($directory, 0777, true);
             }
-            
+
             touch($filename);
         }
 

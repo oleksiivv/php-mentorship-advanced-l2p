@@ -27,7 +27,7 @@ class Company
         return $this->name;
     }
 
-    public function accept(VisitorInterface $visitor): array   
+    public function accept(VisitorInterface $visitor): array
     {
         return $visitor->visitCompany($this);
     }

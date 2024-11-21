@@ -35,7 +35,7 @@ class Person
     public function setId(int $id): void
     {
         $this->id = $id;
-    } 
+    }
 
     public function getId(): int
     {
@@ -55,7 +55,7 @@ class Person
     public function setIQ(int $iq): void
     {
         $this->iq = $iq;
-    } 
+    }
 
     public function getIQ(): int
     {

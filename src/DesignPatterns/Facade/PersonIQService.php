@@ -3,7 +3,7 @@
 namespace DesignPatterns\Facade;
 
 use Entities\Person;
-use Designpatterns\AbstractFactory\PersonRepositoryInterface;
+use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Exception;
 
 class PersonIQService
@@ -24,7 +24,8 @@ class PersonIQService
         return $person2;
     }
 
-    public function transferIq(string $fromName, string $toName, int $amountToTransfer): void {
+    public function transferIq(string $fromName, string $toName, int $amountToTransfer): void
+    {
         $fromPerson = $this->finPersonByName($fromName);
         $toPerson = $this->finPersonByName($toName);
 

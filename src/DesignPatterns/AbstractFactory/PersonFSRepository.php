@@ -13,7 +13,7 @@ class PersonFSRepository implements PersonRepositoryInterface
     public function savePerson(Person $person): void
     {
         $people = $this->readPeople();
-        
+
         $maxId = $this->getMaxId($people);
         $person->setId($maxId + 1);
 

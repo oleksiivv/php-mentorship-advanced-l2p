@@ -20,11 +20,11 @@ class TextScannerTest extends TestCase
 
         $scanner = new TextScanner();
         $wordCounter = new WordCounter();
-        
+
         $scanner->addListener($wordCounter);
-        
+
         $scanner->execute($this->filePath);
-        
+
         $this->assertEquals($expectedWordCount, $wordCounter->getWordsCount());
     }
 
@@ -37,11 +37,11 @@ class TextScannerTest extends TestCase
 
         $scanner = new TextScanner();
         $longestWordKeeper = new LongestWordKeeper();
-        
+
         $scanner->addListener($longestWordKeeper);
-        
+
         $scanner->execute($this->filePath);
-        
+
         $this->assertEquals($expectedLongestWord, $longestWordKeeper->getLongestWord());
     }
 
@@ -54,11 +54,11 @@ class TextScannerTest extends TestCase
 
         $scanner = new TextScanner();
         $numberCounter = new NumberCounter();
-        
+
         $scanner->addListener($numberCounter);
-        
+
         $scanner->execute($this->filePath);
-        
+
         $this->assertEquals($expectedNumberCount, $numberCounter->getNumbersCount());
     }
 
@@ -71,11 +71,11 @@ class TextScannerTest extends TestCase
 
         $scanner = new TextScanner();
         $reverseWordHandler = new ReverseWordHandler();
-        
+
         $scanner->addListener($reverseWordHandler);
-        
+
         $scanner->execute($this->filePath);
-        
+
         $this->assertEquals($contentWithReversedWords, implode(' ', $reverseWordHandler->getReversedWords()));
     }
 
