@@ -1,0 +1,5 @@
+<phpunit>
+    <extensions>
+        <extension class="Qameta\Allure\PHPUnit\AllureExtension" />
+    </extensions>
+</phpunit>

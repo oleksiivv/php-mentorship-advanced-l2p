@@ -10,8 +10,8 @@ $container = require __DIR__ . '/src/Core/services.php';
 
 $router = new Router($container);
 
-$router->addRoute('GET', '/', \Http\Controllers\TestController::class, 'index');
-$router->addRoute('POST', '/', \Http\Controllers\TestController::class, 'store');
-$router->addRoute('GET', '/find', \Http\Controllers\TestController::class, 'show');
+$router->addRoute('GET', '/', \Http\Controllers\PersonController::class, 'index');
+$router->addRoute('POST', '/', \Http\Controllers\PersonController::class, 'store');
+$router->addRoute('GET', '/find', \Http\Controllers\PersonController::class, 'show');
 
 $router->matchRoute();

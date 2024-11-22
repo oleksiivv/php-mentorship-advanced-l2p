@@ -20,7 +20,7 @@ $config = Setup::createAnnotationMetadataConfiguration(
 
 $connection = [
     'driver' => 'pdo_sqlite',
-    'path' => 'db-test.sqlite',
+    'path' => 'db-test.sqlite', //Change to real db instead of test one
 ];
 
 $entityManager = EntityManager::create($connection, $config);
