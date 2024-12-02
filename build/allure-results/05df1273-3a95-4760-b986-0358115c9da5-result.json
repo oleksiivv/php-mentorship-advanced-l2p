@@ -1,0 +1,43 @@
+{
+    "uuid": "05df1273-3a95-4760-b986-0358115c9da5",
+    "name": "Tests\\Feature\\PersonControllerTest::testGetPersonReturns401IfPersonNotAuthorized",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733174204017,
+    "stop": 1733174204678,
+    "status": "failed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Failed asserting that 200 matches expected 401.",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "6580393d2eeddc79d6f5dc734626c693",
+    "testCaseId": "039ee730420365e23c6bde94dcce6e87",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testGetPersonReturns401IfPersonNotAuthorized",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testGetPersonReturns401IfPersonNotAuthorized"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

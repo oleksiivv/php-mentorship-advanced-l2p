@@ -2,7 +2,7 @@
 
 namespace Http\Core;
 
-use Entities\UserRole;
+use Enums\UserRole;
 use Psr\Http\Message\UriInterface;
 
 class Request extends HttpMessage implements RequestInterface
@@ -18,6 +18,7 @@ class Request extends HttpMessage implements RequestInterface
         $this->query = $_GET;
         $this->server = $_SERVER;
         $this->uri = $uri;
+        $this->headers = getallheaders();
 
         $this->handleRequestData();
         $this->requestTarget = $this->server['REQUEST_URI'] ?? '/';
@@ -93,11 +94,11 @@ class Request extends HttpMessage implements RequestInterface
 
     public function validateAccess(array $requiredRoles): void
     {
-        if (empty($requiredRoles) || $requiredRoles == [UserRole::ROLE_GUEST]) {
+        if ($requiredRoles == [UserRole::ROLE_GUEST]) {
             return;
         }
 
-        $accessToken = $this->request['accessToken'] ?? null;
+        $accessToken = $this->headers['Authorization'] ?? null;
 
         if ($accessToken === null || hex2bin($accessToken) === false) {
             throw new \Exception('Access denied', 401);

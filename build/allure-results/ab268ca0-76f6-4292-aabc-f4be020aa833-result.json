@@ -1,0 +1,43 @@
+{
+    "uuid": "ab268ca0-76f6-4292-aabc-f4be020aa833",
+    "name": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest::testIteratorCanTraverseCollection",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733173469973,
+    "stop": 1733173469974,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "9c4d9b81f0125247432858b363c884a9",
+    "testCaseId": "affc5140ed8ad0a3d8f657913e388b27",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest::testIteratorCanTraverseCollection",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testIteratorCanTraverseCollection"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

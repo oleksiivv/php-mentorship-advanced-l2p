@@ -1,0 +1,43 @@
+{
+    "uuid": "a8c51787-fe0e-46eb-81b2-e6ab8ede978a",
+    "name": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest::testReadPersonUsesCache",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733174405727,
+    "stop": 1733174405727,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "ae875d5cf0b0ce768238faf89f7e24f4",
+    "testCaseId": "260d585747c7906585428afd67d07bc2",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest::testReadPersonUsesCache",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testReadPersonUsesCache"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

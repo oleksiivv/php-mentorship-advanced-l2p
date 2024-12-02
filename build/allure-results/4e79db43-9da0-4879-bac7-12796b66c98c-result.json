@@ -1,0 +1,43 @@
+{
+    "uuid": "4e79db43-9da0-4879-bac7-12796b66c98c",
+    "name": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest::testCollectionInitializesWithStrings",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733173469972,
+    "stop": 1733173469972,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "60c3b2356b4850f900989a4fd30f7454",
+    "testCaseId": "a673811263dd9bfc4f9985e67864f119",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest::testCollectionInitializesWithStrings",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\InMemoryStringCollectionTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testCollectionInitializesWithStrings"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

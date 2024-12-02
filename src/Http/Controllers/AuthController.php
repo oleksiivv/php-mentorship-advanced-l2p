@@ -3,9 +3,8 @@
 namespace Http\Controllers;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Entities\Person;
 use Entities\User;
-use Entities\UserRole;
+use Enums\UserRole;
 use Http\Core\Request;
 use Http\Core\Response;
 

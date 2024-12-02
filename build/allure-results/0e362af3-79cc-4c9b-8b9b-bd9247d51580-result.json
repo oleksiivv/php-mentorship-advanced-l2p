@@ -1,0 +1,43 @@
+{
+    "uuid": "0e362af3-79cc-4c9b-8b9b-bd9247d51580",
+    "name": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733174403342,
+    "stop": 1733174404235,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "3ac070435be954fcad0b5b293c90cd44",
+    "testCaseId": "14b62e277f4d18ba8971283e43e2d8f4",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testPostPersonAddsNewPerson"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

@@ -1,0 +1,43 @@
+{
+    "uuid": "8bfd4bf0-08ea-4bb3-ba64-9beb5e8abeb2",
+    "name": "Tests\\Feature\\PersonControllerTest::testFindPersonReturns404IfPersonNotFound",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733174167461,
+    "stop": 1733174167764,
+    "status": "failed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Failed asserting that 200 matches expected 404.",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "a260c47806b83120e89f2adda0eba7e0",
+    "testCaseId": "c610c5ebc6fb3de66767921d57c14131",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testFindPersonReturns404IfPersonNotFound",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testFindPersonReturns404IfPersonNotFound"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

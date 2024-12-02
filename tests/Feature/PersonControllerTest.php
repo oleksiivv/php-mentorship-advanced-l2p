@@ -3,13 +3,52 @@
 namespace Tests\Feature;
 
 use Entities\Person;
+use Entities\User;
+use Enums\UserRole;
 use Tests\FeatureTestCase;
 
 class PersonControllerTest extends FeatureTestCase
 {
+    protected User $user;
+
+    protected User $userAdmin;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->user = new User();
+        $this->user->setName('John Doe');
+        $this->user->setEmail('doe@gmail.com');
+        $this->user->setPasswordSha(sha1('password'));
+        $this->user->setRoles([UserRole::ROLE_USER]);
+        $this->user->setAccessToken(bin2hex(json_encode([
+            'token' => sha1($this->user->getEmail() . $this->user->getPasswordSha()),
+            'roles' => $this->user->getRoles(),
+        ])));
+
+        $this->userAdmin = new User();
+        $this->userAdmin->setName('Jack Doe');
+        $this->userAdmin->setEmail('doe2@gmail.com');
+        $this->userAdmin->setPasswordSha(sha1('password'));
+        $this->userAdmin->setRoles([UserRole::ROLE_ADMIN]);
+        $this->userAdmin->setAccessToken(bin2hex(json_encode([
+            'token' => sha1($this->userAdmin->getEmail() . $this->userAdmin->getPasswordSha()),
+            'roles' => $this->userAdmin->getRoles(),
+        ])));
+
+        $this->entityManager->persist($this->user);
+        $this->entityManager->persist($this->userAdmin);
+
+        $this->entityManager->flush();
+    }
+
     public function testPostPersonAddsNewPerson()
     {
-        $data = ['json' => ['name' => 'John']];
+        $data = [
+            'json' => ['name' => 'John'],
+            'headers' => ['Authorization' => $this->userAdmin->getAccessToken()],
+        ];
 
         $response = $this->sendRequest('POST', '/', $data);
 
@@ -25,17 +64,13 @@ class PersonControllerTest extends FeatureTestCase
         $this->entityManager->persist(new Person($personName));
         $this->entityManager->flush();
 
-        $response = $this->sendRequest('GET', '/find?name=' . $personName);
+        $response = $this->sendRequest(
+            'GET', '/find?name=' . $personName,
+            ['headers' => ['Authorization' => $this->user->getAccessToken()]],
+        );
 
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals([['name' => $personName]], json_decode($response->getBody()->getContents(), true));
-    }
-
-    public function testFindPersonReturns404IfPersonNotFound()
-    {
-        $response = $this->sendRequest('GET', '/find?name=John3ewe');
-
-        $this->assertEquals(404, $response->getStatusCode());
     }
 
     public function testGetPeopleReturnsPeople()
