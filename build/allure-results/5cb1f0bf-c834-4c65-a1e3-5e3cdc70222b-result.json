@@ -1,0 +1,43 @@
+{
+    "uuid": "5cb1f0bf-c834-4c65-a1e3-5e3cdc70222b",
+    "name": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest::testIteratorCanTraverseFileContent",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733161121817,
+    "stop": 1733161121818,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "b021be67710d856cd728180f707eb1ff",
+    "testCaseId": "60d1ee9e652237054ed42bcc898a53db",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest::testIteratorCanTraverseFileContent",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testIteratorCanTraverseFileContent"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

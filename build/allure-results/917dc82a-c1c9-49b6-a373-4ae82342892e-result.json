@@ -1,0 +1,43 @@
+{
+    "uuid": "917dc82a-c1c9-49b6-a373-4ae82342892e",
+    "name": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testSingletonReturnsSameInstance",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733127279903,
+    "stop": 1733127279904,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "6fff10cee4c7df93ea317ac037e3e073",
+    "testCaseId": "6326d2bc70dddc25bb47b3af19fda5a1",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testSingletonReturnsSameInstance",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testSingletonReturnsSameInstance"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

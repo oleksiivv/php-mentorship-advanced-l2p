@@ -5,6 +5,9 @@ namespace Http\Controllers;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Entities\Person;
 use Http\Core\Request;
+use Http\Core\Requests\IndexPersonRequest;
+use Http\Core\Requests\ShowPersonRequest;
+use Http\Core\Requests\StorePersonRequest;
 use Http\Core\Response;
 
 class PersonController
@@ -16,19 +19,19 @@ class PersonController
         $this->personRepository = $personRepository;
     }
 
-    public function index(Request $request): Response
+    public function index(IndexPersonRequest $request): Response
     {
-        return new Response($this->preparePersonData($this->personRepository->readPeople()));
+        return new Response($this->preparePersonData($this->personRepository->readPeople()), 200);
     }
 
-    public function store(Request $request): Response
+    public function store(StorePersonRequest $request): Response
     {
         $this->personRepository->savePerson(new Person($request->getRequest('name')));
 
         return new Response(['message' => 'Person saved'], 201);
     }
 
-    public function show(Request $request): Response
+    public function show(ShowPersonRequest $request): Response
     {
         $person = $this->personRepository->readPerson($request->getQuery('name'));
         $status = $person ? 200 : 404;

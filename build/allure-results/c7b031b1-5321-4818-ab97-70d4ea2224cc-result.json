@@ -1,0 +1,43 @@
+{
+    "uuid": "c7b031b1-5321-4818-ab97-70d4ea2224cc",
+    "name": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733127695591,
+    "stop": 1733127695600,
+    "status": "failed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Failed asserting that 500 matches expected 200.",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "15453a1538081fdd6fe140b97df1325a",
+    "testCaseId": "727895af0677b48eca0a30cc408f04cd",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testGetPeopleReturnsPeople"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

@@ -1,0 +1,43 @@
+{
+    "uuid": "00ff1e30-1957-4a64-982b-90d66c947494",
+    "name": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest::testAdd",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733127653767,
+    "stop": 1733127653768,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "8735766b4682350ab13faf64a20d29dc",
+    "testCaseId": "04e0e22f61fd4bf543d488313a9be089",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest::testAdd",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testAdd"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

@@ -1,0 +1,50 @@
+{
+    "uuid": "1fa62a60-fc15-4ad7-9634-34308fcf30f8",
+    "name": "Tests\\Unit\\DesignPatterns\\Strategy\\EmployeeCollectionTest::test_collection_can_be_sorted",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733161137326,
+    "stop": 1733161137326,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "\"sort employees ascending by name\"",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "f8a7e66809946c4dc91e53dc4808b3e4",
+    "testCaseId": "cc32ce2c7da0a803a13bc12e77e4ab02",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Strategy\\EmployeeCollectionTest::test_collection_can_be_sorted",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Strategy\\EmployeeCollectionTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "test_collection_can_be_sorted"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

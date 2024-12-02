@@ -1,0 +1,43 @@
+{
+    "uuid": "64bfbd2f-ad60-4307-a19f-dc0216471e2b",
+    "name": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest::testCollectionInitializesWithFilePath",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733161121814,
+    "stop": 1733161121816,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "095fce15b4a8f1df1350f91d0b0ce669",
+    "testCaseId": "498399363276df3d99d554f2dce21401",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest::testCollectionInitializesWithFilePath",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Iterator\\Collections\\FileStringCollectionTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testCollectionInitializesWithFilePath"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

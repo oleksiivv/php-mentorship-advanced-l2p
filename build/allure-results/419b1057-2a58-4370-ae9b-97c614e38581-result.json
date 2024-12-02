@@ -1,0 +1,43 @@
+{
+    "uuid": "419b1057-2a58-4370-ae9b-97c614e38581",
+    "name": "Tests\\Unit\\DesignPatterns\\Adapter\\IntegerStackASCIIAdapterTest::test_push_and_pop_works_correctly",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733127653765,
+    "stop": 1733127653766,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "227f2253b3f90ae2153d9b9c9c3dc8ff",
+    "testCaseId": "d8c0b5064d4eddfcfea8db73f1ef8f11",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Adapter\\IntegerStackASCIIAdapterTest::test_push_and_pop_works_correctly",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Adapter\\IntegerStackASCIIAdapterTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "test_push_and_pop_works_correctly"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

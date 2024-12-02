@@ -11,7 +11,7 @@ class Response extends HttpMessage implements ResponseInterface
     protected int $status;
     protected string $reasonPhrase = '';
 
-    public function __construct(array $data, int $status = 200)
+    public function __construct(array $data, int $status)
     {
         $this->data = $data;
         $this->status = $status;

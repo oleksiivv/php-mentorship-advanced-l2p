@@ -1,0 +1,43 @@
+{
+    "uuid": "410b1e29-ae4d-4f5d-87b4-c7780ad130d2",
+    "name": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733126353391,
+    "stop": 1733126353481,
+    "status": "broken",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Call to undefined method GuzzleHttp\\Exception\\ConnectException::getResponse()",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "3ac070435be954fcad0b5b293c90cd44",
+    "testCaseId": "14b62e277f4d18ba8971283e43e2d8f4",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testPostPersonAddsNewPerson"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

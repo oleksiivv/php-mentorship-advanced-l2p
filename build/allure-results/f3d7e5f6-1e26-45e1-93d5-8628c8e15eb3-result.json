@@ -1,0 +1,43 @@
+{
+    "uuid": "f3d7e5f6-1e26-45e1-93d5-8628c8e15eb3",
+    "name": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733127427093,
+    "stop": 1733127427098,
+    "status": "broken",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Call to undefined method GuzzleHttp\\Exception\\ConnectException::getResponse()",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "15453a1538081fdd6fe140b97df1325a",
+    "testCaseId": "727895af0677b48eca0a30cc408f04cd",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testGetPeopleReturnsPeople"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

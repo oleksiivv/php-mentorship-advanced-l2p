@@ -1,0 +1,50 @@
+{
+    "uuid": "fa377df2-4eb7-4cac-b9ad-1f026e296031",
+    "name": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\TotalNumberOfEmployeesReportTest::testTotalSalary",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733126353602,
+    "stop": 1733126353602,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#2",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "101962941eda3c6c8c89d18b07490d41",
+    "testCaseId": "00535b62d31e1f66c813a363419343d4",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\TotalNumberOfEmployeesReportTest::testTotalSalary",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\TotalNumberOfEmployeesReportTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testTotalSalary"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}
