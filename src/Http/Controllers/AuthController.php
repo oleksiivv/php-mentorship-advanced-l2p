@@ -2,14 +2,11 @@
 
 namespace Http\Controllers;
 
-use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Entities\Person;
 use Entities\User;
 use Entities\UserRole;
 use Http\Core\Request;
-use Http\Core\Requests\LoginRequest;
-use Http\Core\Requests\RegisterRequest;
 use Http\Core\Response;
 
 class AuthController
@@ -18,7 +15,7 @@ class AuthController
     {
     }
 
-    public function login(LoginRequest $request)
+    public function login(Request $request)
     {
         $email = $request->getRequest('email');
         $password = $request->getRequest('password');
@@ -33,18 +30,20 @@ class AuthController
             return new Response(['error' => 'Invalid password'], 401);
         }
 
-        $accessToken = bin2hex(random_bytes(32));
-        $user->setAccessToken($accessToken);
+        $user->setAccessToken(bin2hex(json_encode([
+            'token' => sha1($email . $password),
+            'roles' => $user->getRoles(),
+        ])));
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
         return new Response([
-            'accessToken' => $accessToken,
+            'accessToken' => $user->getAccessToken(),
         ], 200);
     }
 
-    public function register(RegisterRequest $request): Response
+    public function register(Request $request): Response
     {
         $email = $request->getRequest('email');
         $password = $request->getRequest('password');
@@ -58,17 +57,16 @@ class AuthController
         $user->setPasswordSha(sha1($password));
         $user->setRoles([$request->getRequest('role') ?? UserRole::ROLE_USER]);
 
-        $accessToken = bin2hex(json_encode([
-            'token' => random_bytes(32),
+        $user->setAccessToken(bin2hex(json_encode([
+            'token' => sha1($email . $password),
             'roles' => $user->getRoles(),
-            'expiresAt' => $user->getAccessTokenExpiresAt()->format('Y-m-d H:i:s'),
-        ]));
+        ])));
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
         return new Response([
-            'accessToken' => $accessToken,
+            'accessToken' => $user->getAccessToken(),
         ], 201);
     }
 }

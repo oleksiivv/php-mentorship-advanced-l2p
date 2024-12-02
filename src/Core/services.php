@@ -3,9 +3,10 @@
 use Core\Container;
 use DesignPatterns\AbstractFactory\PersonDBRepository;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Http\Core\Request;
+use Http\Core\RequestInterface;
 use Http\Core\Uri;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
 
 require 'vendor/autoload.php';
@@ -23,6 +24,7 @@ $container->bind(RequestInterface::class, function (Container $container) {
     return $request->withProtocolVersion(PROTOCOL_VERSION);
 });
 
+$container->bind(EntityManagerInterface::class, $entityManager);
 $container->bind(PersonRepositoryInterface::class, new PersonDBRepository($entityManager));
 
 return $container;

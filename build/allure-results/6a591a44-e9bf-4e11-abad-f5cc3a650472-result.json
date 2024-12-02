@@ -1,0 +1,43 @@
+{
+    "uuid": "6a591a44-e9bf-4e11-abad-f5cc3a650472",
+    "name": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest::testGetSize",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733170783587,
+    "stop": 1733170783587,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "c98063c67eb221b844f6940adf8b54e7",
+    "testCaseId": "e15e006f006b419ee51ffeff30cec6d3",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest::testGetSize",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Composite\\DirectoryTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testGetSize"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

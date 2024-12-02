@@ -1,0 +1,43 @@
+{
+    "uuid": "1643ea77-147c-40c2-b728-577450013482",
+    "name": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testWhoIsTheSmarter",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733172562838,
+    "stop": 1733172562859,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "1eb7ef6fa22a9e868f1a05e17b018efa",
+    "testCaseId": "762fe95c1f98627d720d25cddc7ce4f2",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testWhoIsTheSmarter",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testWhoIsTheSmarter"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

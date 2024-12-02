@@ -3,7 +3,6 @@
 namespace Http\Core;
 
 use Entities\UserRole;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
 
 class Request extends HttpMessage implements RequestInterface
@@ -14,15 +13,11 @@ class Request extends HttpMessage implements RequestInterface
     protected string $requestTarget;
     protected UriInterface|null $uri;
 
-    protected string|null $requiredRole = UserRole::ROLE_USER;
-
     public function __construct(UriInterface $uri = null)
     {
         $this->query = $_GET;
         $this->server = $_SERVER;
         $this->uri = $uri;
-
-        $this->validateAccess();
 
         $this->handleRequestData();
         $this->requestTarget = $this->server['REQUEST_URI'] ?? '/';
@@ -31,7 +26,7 @@ class Request extends HttpMessage implements RequestInterface
     private function handleRequestData(): void
     {
         if ($this->getContentType() === 'application/json') {
-            $jsonContent = htmlspecialchars(file_get_contents('php://input'), ENT_QUOTES, 'UTF-8');
+            $jsonContent = strip_tags(file_get_contents('php://input'));
             $decodedJson = json_decode($jsonContent, true);
 
             $this->request = is_array($decodedJson) ? $decodedJson : [];
@@ -96,8 +91,12 @@ class Request extends HttpMessage implements RequestInterface
         return $new;
     }
 
-    private function validateAccess(): void
+    public function validateAccess(array $requiredRoles): void
     {
+        if (empty($requiredRoles) || $requiredRoles == [UserRole::ROLE_GUEST]) {
+            return;
+        }
+
         $accessToken = $this->request['accessToken'] ?? null;
 
         if ($accessToken === null || hex2bin($accessToken) === false) {
@@ -106,7 +105,7 @@ class Request extends HttpMessage implements RequestInterface
 
         $roles = json_decode(hex2bin($accessToken), true)['roles'] ?? [];
 
-        if (!in_array($this->requiredRole, $roles)) {
+        if (count(array_intersect($roles, $requiredRoles)) == 0) {
             throw new \Exception('Access denied', 401);
         }
     }
