@@ -1,0 +1,43 @@
+{
+    "uuid": "224296f2-7510-4dce-b75a-084a1fcecc9c",
+    "name": "Tests\\Feature\\PersonControllerTest::testFindPersonReturnsPerson",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733334808032,
+    "stop": 1733334808404,
+    "status": "failed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Failed asserting that 401 matches expected 200.",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "2ce50b219371d288cf0f14887d02cffb",
+    "testCaseId": "5933f8df6a7fd917346358d4a9721093",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testFindPersonReturnsPerson",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testFindPersonReturnsPerson"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

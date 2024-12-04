@@ -1,0 +1,43 @@
+{
+    "uuid": "bfa872ef-67a0-4535-982c-72fa5ed8eee1",
+    "name": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337622354,
+    "stop": 1733337622367,
+    "status": "broken",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "session_start(): Session cannot be started after headers have already been sent",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "15453a1538081fdd6fe140b97df1325a",
+    "testCaseId": "727895af0677b48eca0a30cc408f04cd",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testGetPeopleReturnsPeople",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testGetPeopleReturnsPeople"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

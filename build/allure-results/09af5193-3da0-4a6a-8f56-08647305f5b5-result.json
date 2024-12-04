@@ -1,0 +1,43 @@
+{
+    "uuid": "09af5193-3da0-4a6a-8f56-08647305f5b5",
+    "name": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testChangeIqByDelta",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337307819,
+    "stop": 1733337307820,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "826509700c9da4059b810b0942836dd5",
+    "testCaseId": "bc96943b4dd9b222067ff8dd54ff3115",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testChangeIqByDelta",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testChangeIqByDelta"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

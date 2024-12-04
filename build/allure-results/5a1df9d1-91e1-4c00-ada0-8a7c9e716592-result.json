@@ -1,0 +1,43 @@
+{
+    "uuid": "5a1df9d1-91e1-4c00-ada0-8a7c9e716592",
+    "name": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testTransferIq",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337708103,
+    "stop": 1733337708103,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "1ed2d95bbc3812cbaaa6e4510ddfa85e",
+    "testCaseId": "aeb545675e2c4dcd9f173c8105f9f93a",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testTransferIq",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testTransferIq"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

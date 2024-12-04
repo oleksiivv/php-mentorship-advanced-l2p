@@ -2,9 +2,11 @@
 
 namespace Tests\Feature;
 
+use Core\Container;
 use Entities\Person;
 use Entities\User;
 use Enums\UserRole;
+use Http\Core\Session\SessionManager;
 use Tests\FeatureTestCase;
 
 class PersonControllerTest extends FeatureTestCase
@@ -31,7 +33,7 @@ class PersonControllerTest extends FeatureTestCase
         $this->userAdmin->setName('Jack Doe');
         $this->userAdmin->setEmail('doe2@gmail.com');
         $this->userAdmin->setPasswordSha(sha1('password'));
-        $this->userAdmin->setRoles([UserRole::ROLE_ADMIN]);
+        $this->userAdmin->setRoles([UserRole::ROLE_USER, UserRole::ROLE_ADMIN]);
         $this->userAdmin->setAccessToken(bin2hex(json_encode([
             'token' => sha1($this->userAdmin->getEmail() . $this->userAdmin->getPasswordSha()),
             'roles' => $this->userAdmin->getRoles(),
@@ -47,7 +49,7 @@ class PersonControllerTest extends FeatureTestCase
     {
         $data = [
             'json' => ['name' => 'John'],
-            'headers' => ['Authorization' => $this->userAdmin->getAccessToken()],
+            'headers' => ['Authorization' => 'Bearer ' . $this->userAdmin->getAccessToken()],
         ];
 
         $response = $this->sendRequest('POST', '/', $data);
@@ -66,7 +68,7 @@ class PersonControllerTest extends FeatureTestCase
 
         $response = $this->sendRequest(
             'GET', '/find?name=' . $personName,
-            ['headers' => ['Authorization' => $this->user->getAccessToken()]],
+            ['headers' => ['Authorization' => 'Bearer ' . $this->user->getAccessToken()]],
         );
 
         $this->assertEquals(200, $response->getStatusCode());

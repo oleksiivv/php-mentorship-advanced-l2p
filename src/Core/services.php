@@ -6,6 +6,7 @@ use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Http\Core\Request;
 use Http\Core\RequestInterface;
+use Http\Core\Session\SessionManager;
 use Http\Core\Uri;
 use Psr\Http\Message\UriInterface;
 
@@ -24,6 +25,7 @@ $container->bind(RequestInterface::class, function (Container $container) {
     return $request->withProtocolVersion(PROTOCOL_VERSION);
 });
 
+$container->bind(SessionManager::class, new SessionManager());
 $container->bind(EntityManagerInterface::class, $entityManager);
 $container->bind(PersonRepositoryInterface::class, new PersonDBRepository($entityManager));
 

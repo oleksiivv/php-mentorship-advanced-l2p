@@ -1,0 +1,43 @@
+{
+    "uuid": "75c2d8ac-215f-4b5a-8916-447107c96492",
+    "name": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testCannotUnserializeSingleton",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733335285357,
+    "stop": 1733335285357,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "ee5df985d959f0be435c5aa638ceec5c",
+    "testCaseId": "311f87e0ab0ffa35811a60c67d851d1c",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testCannotUnserializeSingleton",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testCannotUnserializeSingleton"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

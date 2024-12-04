@@ -1,0 +1,43 @@
+{
+    "uuid": "6d524ebe-e629-48b0-8b01-5e16d44f6410",
+    "name": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest::testCacheInvalidatesOnUpdatePersonIQ",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733334809759,
+    "stop": 1733334809759,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "414b6da2af521ee0c750f4d75a2bd600",
+    "testCaseId": "9be7ec4495021f3a3b0043851c5f65e1",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest::testCacheInvalidatesOnUpdatePersonIQ",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Proxy\\CachedPersonRepositoryTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testCacheInvalidatesOnUpdatePersonIQ"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

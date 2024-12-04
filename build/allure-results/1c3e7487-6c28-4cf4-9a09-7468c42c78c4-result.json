@@ -1,0 +1,50 @@
+{
+    "uuid": "1c3e7487-6c28-4cf4-9a09-7468c42c78c4",
+    "name": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\AverageSalaryReportTest::testAverageSalary",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733335268127,
+    "stop": 1733335268127,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#2",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "4e5f165dbaa11adfa2c0d2afd4f08015",
+    "testCaseId": "23a1730177892b4139d5a14b15d252b5",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\AverageSalaryReportTest::testAverageSalary",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Visitor\\Reports\\AverageSalaryReportTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testAverageSalary"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

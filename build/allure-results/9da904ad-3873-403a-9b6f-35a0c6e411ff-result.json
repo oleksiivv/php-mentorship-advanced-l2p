@@ -1,0 +1,50 @@
+{
+    "uuid": "9da904ad-3873-403a-9b6f-35a0c6e411ff",
+    "name": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testWordsReverse",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337538031,
+    "stop": 1733337538032,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#1",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "7f75692ccf2017884796a9bbc4772180",
+    "testCaseId": "88eaed121990f6710ffb996bc321bfbc",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testWordsReverse",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testWordsReverse"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

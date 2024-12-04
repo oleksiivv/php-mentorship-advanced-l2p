@@ -1,0 +1,43 @@
+{
+    "uuid": "8ab4ea0e-405a-46cd-8a1e-1a76f2b4c794",
+    "name": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testFlyMethodWorks",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337508254,
+    "stop": 1733337508254,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "8755015f9f9e59df1cdf8c4eae819b9d",
+    "testCaseId": "9cab552ac43bc07c3caa046f10888b18",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest::testFlyMethodWorks",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Singleton\\SupermanTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testFlyMethodWorks"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

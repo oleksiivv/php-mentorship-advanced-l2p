@@ -1,0 +1,50 @@
+{
+    "uuid": "12936203-8071-4f9e-9bc0-65f077c273f8",
+    "name": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testLongestWordKeeper",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337708127,
+    "stop": 1733337708127,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#1",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "817b0bc9efcfb8da50c44a9d85366b06",
+    "testCaseId": "81b1fe12db794b7e5a083fa77a34d5f8",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testLongestWordKeeper",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testLongestWordKeeper"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

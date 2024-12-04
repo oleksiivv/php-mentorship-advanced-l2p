@@ -3,6 +3,8 @@
 namespace Http\Core;
 
 use Enums\UserRole;
+use Http\Core\Session\SessionManager;
+use Http\Middlewares\MiddlewareInterface;
 use Psr\Http\Message\UriInterface;
 
 class Request extends HttpMessage implements RequestInterface
@@ -12,6 +14,8 @@ class Request extends HttpMessage implements RequestInterface
     protected array $server;
     protected string $requestTarget;
     protected UriInterface|null $uri;
+    protected array $middlewares = [];
+    private SessionManager $sessionManager;
 
     public function __construct(UriInterface $uri = null)
     {
@@ -22,6 +26,41 @@ class Request extends HttpMessage implements RequestInterface
 
         $this->handleRequestData();
         $this->requestTarget = $this->server['REQUEST_URI'] ?? '/';
+    }
+
+    public function setSessionManager(SessionManager $sessionManager)
+    {
+        $this->sessionManager = $sessionManager;
+    }
+
+    public function getSessionData($key): mixed
+    {
+        return $this->sessionManager->get($key);
+    }
+
+    public function setSessionData($key, $value): void
+    {
+        $this->sessionManager->set($key, $value);
+    }
+
+    public function getCsrfToken(): string|null
+    {
+        return $this->getSessionData('csrf_token');
+    }
+
+    public function setCsrfToken($token): void
+    {
+        $this->setSessionData('csrf_token', $token);
+    }
+
+    public function addMiddlewares(array $middlewares): void
+    {
+        $this->middlewares = array_merge($this->middlewares, $middlewares);
+    }
+
+    public function getMiddlewares(): array
+    {
+        return $this->middlewares;
     }
 
     private function handleRequestData(): void
@@ -90,24 +129,5 @@ class Request extends HttpMessage implements RequestInterface
         }
 
         return $new;
-    }
-
-    public function validateAccess(array $requiredRoles): void
-    {
-        if ($requiredRoles == [UserRole::ROLE_GUEST]) {
-            return;
-        }
-
-        $accessToken = $this->headers['Authorization'] ?? null;
-
-        if ($accessToken === null || hex2bin($accessToken) === false) {
-            throw new \Exception('Access denied', 401);
-        }
-
-        $roles = json_decode(hex2bin($accessToken), true)['roles'] ?? [];
-
-        if (count(array_intersect($roles, $requiredRoles)) == 0) {
-            throw new \Exception('Access denied', 401);
-        }
     }
 }

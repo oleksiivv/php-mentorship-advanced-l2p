@@ -5,6 +5,8 @@ namespace Http;
 use Core\Container;
 use Http\Core\RequestInterface;
 use Http\Core\Response;
+use Http\Core\Session\SessionManager;
+use Http\Middlewares\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class Router
@@ -17,9 +19,9 @@ class Router
         $this->container = $container;
     }
 
-    public function addRoute(string $method, string $path, string $controllerId, string $action, array $requiredRoles): void
+    public function addRoute(string $method, string $path, string $controllerId, string $action, array $middlewares = []): void
     {
-        $this->routes[$method][$path] = [$controllerId, $action, $requiredRoles];
+        $this->routes[$method][$path] = [$controllerId, $action, $middlewares];
     }
 
     public function matchRoute(): ResponseInterface
@@ -30,19 +32,26 @@ class Router
         $path = parse_url($url, PHP_URL_PATH);
 
         if (isset($this->routes[$method][$path])) {
-            [$controllerId, $action, $requiredRoles] = $this->routes[$method][$path];
+            [$controllerId, $action, $middlewares] = $this->routes[$method][$path];
 
             try {
-                $controller = $this->container->get($controllerId);
                 $request = $this->container->get(RequestInterface::class);
 
                 if ($request instanceof \Closure) {
                     $request = call_user_func($request, $this->container);
                 }
 
-                $request->validateAccess($requiredRoles);
+                $request->setSessionManager($this->container->get(SessionManager::class));
+                $request->addMiddlewares($middlewares);
 
-                $response = call_user_func([$controller, $action], $request);
+                $response = array_reduce(array_reverse($request->getMiddlewares()), function ($next, $middleware) {
+                    return function ($request) use ($middleware, $next) {
+                        return $middleware->handle($this->container, $request, $next);
+                    };
+                }, function ($request) use ($controllerId, $action) {
+                    $controller = $this->container->get($controllerId);
+                    return call_user_func([$controller, $action], $request);
+                })($request);
 
                 if ($response instanceof ResponseInterface) {
                     $this->sendResponse($response);

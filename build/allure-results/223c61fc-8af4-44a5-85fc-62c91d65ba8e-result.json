@@ -1,0 +1,50 @@
+{
+    "uuid": "223c61fc-8af4-44a5-85fc-62c91d65ba8e",
+    "name": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testNumberCounter",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337148704,
+    "stop": 1733337148705,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#0",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "a948ed7cb873b6e43a4cfaf0dd85a451",
+    "testCaseId": "3fe48c19f95310dbc03be73dae10b582",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testNumberCounter",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testNumberCounter"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

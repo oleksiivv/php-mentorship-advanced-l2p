@@ -31,12 +31,14 @@ class HttpMessage implements MessageInterface
 
     public function hasHeader(string $name): bool
     {
-        return isset($this->headers[strtolower($name)]);
+        return isset($this->headers[$name]);
     }
 
     public function getHeader(string $name): array
     {
-        return $this->headers[strtolower($name)] ?? [];
+        $header = $this->headers[$name] ?? null;
+
+        return is_array($header) ? $header : [$header];
     }
 
     public function getHeaderLine(string $name): string

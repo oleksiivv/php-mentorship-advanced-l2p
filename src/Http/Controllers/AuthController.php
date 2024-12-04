@@ -29,10 +29,7 @@ class AuthController
             return new Response(['error' => 'Invalid password'], 401);
         }
 
-        $user->setAccessToken(bin2hex(json_encode([
-            'token' => sha1($email . $password),
-            'roles' => $user->getRoles(),
-        ])));
+        $user->setAccessToken(sha1($email . $password));
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();
@@ -56,10 +53,7 @@ class AuthController
         $user->setPasswordSha(sha1($password));
         $user->setRoles([$request->getRequest('role') ?? UserRole::ROLE_USER]);
 
-        $user->setAccessToken(bin2hex(json_encode([
-            'token' => sha1($email . $password),
-            'roles' => $user->getRoles(),
-        ])));
+        $user->setAccessToken(sha1($email . $password));
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();

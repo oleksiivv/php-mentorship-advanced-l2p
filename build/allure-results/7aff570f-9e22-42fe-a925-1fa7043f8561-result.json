@@ -1,0 +1,50 @@
+{
+    "uuid": "7aff570f-9e22-42fe-a925-1fa7043f8561",
+    "name": "Tests\\Unit\\DesignPatterns\\AbstractFactory\\PersonControllerTest::testSaveAndReadPeople",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733335268009,
+    "stop": 1733335268014,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "\"FS Storage\"",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "510fef0bc762c95a6d8289cd4473b8b3",
+    "testCaseId": "72f8b4707ada090ee1b6bd351cf103a5",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\AbstractFactory\\PersonControllerTest::testSaveAndReadPeople",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\AbstractFactory\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testSaveAndReadPeople"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}
