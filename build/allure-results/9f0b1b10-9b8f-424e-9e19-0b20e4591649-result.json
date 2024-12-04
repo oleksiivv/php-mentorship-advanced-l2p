@@ -1,0 +1,50 @@
+{
+    "uuid": "9f0b1b10-9b8f-424e-9e19-0b20e4591649",
+    "name": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testWordCounter",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1733337949920,
+    "stop": 1733337949920,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [
+        {
+            "name": "Data set",
+            "value": "#1",
+            "excluded": null,
+            "mode": null
+        }
+    ],
+    "historyId": "82489296e0532424ae4a88f1e40288a0",
+    "testCaseId": "72af445f783bbdff06187cb561e92f7e",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest::testWordCounter",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Observer\\TextScannerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testWordCounter"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}
