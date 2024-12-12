@@ -2,6 +2,7 @@
 
 namespace Http\Core;
 
+use Entities\User;
 use Enums\UserRole;
 use Http\Core\Session\SessionManager;
 use Http\Middlewares\MiddlewareInterface;
@@ -16,6 +17,8 @@ class Request extends HttpMessage implements RequestInterface
     protected UriInterface|null $uri;
     protected array $middlewares = [];
     private SessionManager $sessionManager;
+
+    private User|null $user;
 
     public function __construct(UriInterface $uri = null)
     {
@@ -129,5 +132,15 @@ class Request extends HttpMessage implements RequestInterface
         }
 
         return $new;
+    }
+
+    public function setUser(User $user): void
+    {
+        $this->user = $user;
+    }
+
+    public function getUser(): User|null
+    {
+        return $this->user;
     }
 }

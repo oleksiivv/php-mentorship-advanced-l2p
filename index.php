@@ -26,4 +26,16 @@ $router->addRoute('GET', '/find', \Http\Controllers\PersonController::class, 'sh
 $router->addRoute('POST', '/auth/login', \Http\Controllers\AuthController::class, 'login', [new AuthenticationMiddleware([UserRole::ROLE_GUEST])]);
 $router->addRoute('POST', '/auth/register', \Http\Controllers\AuthController::class, 'register', [new AuthenticationMiddleware([UserRole::ROLE_GUEST])]);
 
+// Inventory routes
+$router->addRoute('GET', '/inventory', \Http\Controllers\Order\InventoryController::class, 'index', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('POST', '/inventory', \Http\Controllers\Order\InventoryController::class, 'store', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('GET', '/inventory/show', \Http\Controllers\Order\InventoryController::class, 'show', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('PUT', '/inventory/update', \Http\Controllers\Order\InventoryController::class, 'update', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+
+// Cart routes
+$router->addRoute('POST', '/cart', \Http\Controllers\Order\CartController::class, 'create', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('POST', '/cart/add', \Http\Controllers\Order\CartController::class, 'addToCart', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('GET', '/cart', \Http\Controllers\Order\CartController::class, 'checkout', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('DELETE', '/cart/remove', \Http\Controllers\Order\CartController::class, 'removeFromCart', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+
 $router->matchRoute();

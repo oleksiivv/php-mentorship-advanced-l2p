@@ -44,6 +44,16 @@ class User
     private string $accessToken;
 
     /**
+     * @ORM\OneToMany(targetEntity="Entities\Cart", mappedBy="user")
+     */
+    private array $carts;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Entities\Inventory", mappedBy="provider")
+     */
+    private array $inventories;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private DateTime $accessTokenExpiresAt;
@@ -105,14 +115,14 @@ class User
 
     public function addRole(string $role): void
     {
-        if (! $this->hasRole($role)) {
+        if (!$this->hasRole($role)) {
             $this->roles[] = $role;
         }
     }
 
     public function removeRole(string $role): void
     {
-        $this->roles = array_filter($this->roles, fn ($r) => $r !== $role);
+        $this->roles = array_filter($this->roles, fn($r) => $r !== $role);
     }
 
     public function setAccessToken(string $accessToken): void
@@ -129,5 +139,29 @@ class User
     public function getAccessTokenExpiresAt(): DateTime
     {
         return $this->accessTokenExpiresAt;
+    }
+
+    public function addCart(Cart $cart): void
+    {
+        $this->carts = $this->carts ?? [];
+
+        $this->carts[] = $cart;
+    }
+
+    public function getCarts(): array
+    {
+        return $this->carts;
+    }
+
+    public function addInventory(Inventory $inventory): void
+    {
+        $this->inventories = $this->inventories ?? [];
+
+        $this->inventories[] = $inventory;
+    }
+
+    public function getInventories(): array
+    {
+        return $this->inventories;
     }
 }

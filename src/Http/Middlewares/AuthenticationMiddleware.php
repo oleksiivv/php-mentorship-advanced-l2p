@@ -43,6 +43,7 @@ class AuthenticationMiddleware implements MiddlewareInterface
 
         $roles = $user?->getRoles() ?? [];
 
+        $hasRequiredRole = false;
         foreach ($this->requiredRoles as $requiredRole) {
             if (in_array($requiredRole, $roles)) {
                 $hasRequiredRole = true;
@@ -50,6 +51,12 @@ class AuthenticationMiddleware implements MiddlewareInterface
             }
         }
 
-        return $hasRequiredRole;
+        if ($hasRequiredRole) {
+            $request->setUser($user);
+
+            return true;
+        }
+
+        return false;
     }
 }
