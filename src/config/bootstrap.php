@@ -11,7 +11,7 @@ $cache = null;
 $useSimpleAnnotationReader = false;
 
 $config = Setup::createAnnotationMetadataConfiguration(
-    [__DIR__ . './../src/Entities'],
+    [__DIR__ . '/./../Entities'],
     $isDevMode,
     $proxyDir,
     $cache,
@@ -25,8 +25,8 @@ $connections = [
     ],
     'mysql' => [
         'driver' => 'pdo_mysql',
-        'host' => 'localhost',
-        'port' => '3306',
+        'host' => '127.0.0.1',
+        'port' => '8889',
         'user' => 'root',
         'password' => 'root',
         'dbname' => 'php_mentorship_l2p',

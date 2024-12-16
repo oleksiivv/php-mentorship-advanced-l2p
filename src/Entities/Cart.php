@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="inventories")
+ * @ORM\Table(name="carts")
  */
 class Cart
 {
