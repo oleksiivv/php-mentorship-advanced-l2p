@@ -5,6 +5,11 @@ To start the application, use the following Docker command:
 ```bash
 docker-compose up -d --build
 ```
+To create tables, update src/config/bootstrap.php with your database credentials and run the following command:
+
+```bash
+php mysql_migrate.php
+```
 
 Afterwards, open a web browser and navigate to:
 
