@@ -3,7 +3,10 @@
     "psr-4": {
       "": "src/",
       "Tests\\": "tests/"
-    }
+    },
+    "files": [
+      "src/Helpers/web_helper.php"
+    ]
   },
   "require": {
     "php": "^8.2",

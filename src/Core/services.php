@@ -9,6 +9,7 @@ use Http\Core\RequestInterface;
 use Http\Core\Session\SessionManager;
 use Http\Core\Uri;
 use Psr\Http\Message\UriInterface;
+use Http\Core\Cookie\CookieManager;
 
 require 'vendor/autoload.php';
 
@@ -26,6 +27,7 @@ $container->bind(RequestInterface::class, function (Container $container) {
 });
 
 $container->bind(SessionManager::class, new SessionManager());
+$container->bind(CookieManager::class, new CookieManager());
 $container->bind(EntityManagerInterface::class, $entityManager);
 $container->bind(PersonRepositoryInterface::class, new PersonDBRepository($entityManager));
 

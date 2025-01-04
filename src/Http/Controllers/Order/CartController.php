@@ -5,6 +5,7 @@ namespace Http\Controllers\Order;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Doctrine\DBAL\LockMode;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Entities\Cart;
 use Entities\Inventory;
 use Entities\Person;
@@ -14,7 +15,7 @@ use Webmozart\Assert\Assert;
 
 class CartController
 {
-    public function __construct(private EntityManager $entityManager)
+    public function __construct(private EntityManagerInterface $entityManager)
     {
     }
 

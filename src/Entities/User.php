@@ -4,6 +4,8 @@ namespace Entities;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
+use Illuminate\Support\Collection;
 
 /**
  * @ORM\Entity
@@ -46,12 +48,12 @@ class User
     /**
      * @ORM\OneToMany(targetEntity="Entities\Cart", mappedBy="user")
      */
-    private array $carts;
+    private array|PersistentCollection $carts;
 
     /**
      * @ORM\OneToMany(targetEntity="Entities\Inventory", mappedBy="provider")
      */
-    private array $inventories;
+    private array|PersistentCollection $inventories;
 
     /**
      * @ORM\Column(type="datetime")

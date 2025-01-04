@@ -1,32 +1,32 @@
 <?php
 
-namespace Http\Controllers\Order;
+namespace Http\Controllers\Web;
 
-use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Entities\Inventory;
-use Entities\Person;
+use Http\Core\Cookie\CookieManager;
 use Http\Core\Request;
 use Http\Core\Response;
+use Psr\Http\Message\ResponseInterface;
 use Webmozart\Assert\Assert;
 
-class InventoryController
+class WebController
 {
-    public function __construct(private EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        private EntityManagerInterface $entityManager,
+        private CookieManager $cookieManager,
+    ) {
     }
 
-    public function index(): Response
+    public function products(Request $request): ResponseInterface
     {
-        $inventories = $this->entityManager->getRepository(Inventory::class)->findAll();
-
-        return new Response(array_map(function (Inventory $inventory) {
-            return $this->prepareResponse($inventory);
-        }, $inventories), 200);
+        return new Response([
+            'products' => $this->entityManager->getRepository(Inventory::class)->findAll(),
+            'accessToken' => $this->cookieManager->getCurrentUser(),
+        ], 200, 'text/html', 'products.php');
     }
 
-    public function store(Request $request): Response
+    public function createProduct(Request $request): ResponseInterface
     {
         $inventory = new Inventory();
 
@@ -45,23 +45,29 @@ class InventoryController
         $this->entityManager->persist($inventory);
         $this->entityManager->flush();
 
-        return new Response($this->prepareResponse($inventory), 201);
+        return new Response([
+            'product' => $inventory,
+            'accessToken' => $this->cookieManager->getCurrentUser(),
+        ], 201, 'text/html', 'create_product.php');
     }
 
-    public function show(Request $request): Response
+    public function showProduct(Request $request): ResponseInterface
     {
-        $inventory = $this->entityManager->getRepository(Inventory::class)->find($request->getQuery('id'));
+        $inventory = $this->entityManager->getRepository(Inventory::class)->find($request->getQuery('productId'));
 
         if (!$inventory) {
             return new Response(['error' => 'Inventory not found'], 404);
         }
 
-        return new Response($this->prepareResponse($inventory), 200);
+        return new Response([
+            'product' => $inventory,
+            'accessToken' => $this->cookieManager->getCurrentUser(),
+        ], 200, 'text/html', 'product.php');
     }
 
-    public function update(Request $request): Response
+    public function updateProduct(Request $request): ResponseInterface
     {
-        $inventory = $this->entityManager->getRepository(Inventory::class)->find($request->getQuery('id'));
+        $inventory = $this->entityManager->getRepository(Inventory::class)->find($request->getRequest('id'));
 
         if (!$inventory) {
             return new Response(['error' => 'Inventory not found'], 404);
@@ -80,17 +86,11 @@ class InventoryController
         $inventory->setPrice($request->getRequest('price'));
 
         $this->entityManager->persist($inventory);
+        $this->entityManager->flush();
 
-        return new Response($this->prepareResponse($inventory), 200);
-    }
-
-    private function prepareResponse(Inventory $inventory): array
-    {
-        return [
-            'id' => $inventory->getId(),
-            'name' => $inventory->getName(),
-            'quantity' => $inventory->getQuantity(),
-            'price' => $inventory->getPrice(),
-        ];
+        return new Response([
+            'product' => $inventory,
+            'accessToken' => $this->cookieManager->getCurrentUser(),
+        ], 200, 'text/html', 'product.php');
     }
 }

@@ -11,11 +11,16 @@ class Response extends HttpMessage implements ResponseInterface
     protected int $status;
     protected string $reasonPhrase = '';
 
-    public function __construct(array $data, int $status)
+    public function __construct(array $data, int $status, string $contentType = 'application/json', string $viewPath = '')
     {
         $this->data = $data;
         $this->status = $status;
-        $this->body = $this->createStreamFromData();
+
+        if ($contentType === 'application/json') {
+            $this->body = $this->createStreamFromData();
+        } else if ($contentType === 'text/html') {
+            $this->body = $this->createHTMLStreamFromData($viewPath, $data);
+        }
     }
 
     private function createStreamFromData(): StreamInterface
@@ -126,5 +131,19 @@ class Response extends HttpMessage implements ResponseInterface
         ];
 
         return $statusPhrases[$status] ?? '';
+    }
+
+    private function createHTMLStreamFromData(string $view, array $data = []): StreamInterface
+    {
+        ob_start();
+        extract($data);
+        include __DIR__ . "/../../Views/$view";
+        $output = ob_get_clean();
+
+        $stream = fopen('php://temp', 'r+');
+        fwrite($stream, $output);
+        rewind($stream);
+
+        return new Stream($stream);
     }
 }

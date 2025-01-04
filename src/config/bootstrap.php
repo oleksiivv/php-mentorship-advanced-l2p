@@ -33,6 +33,6 @@ $connections = [
     ],
 ];
 
-$entityManager = EntityManager::create($connections['mysql'], $config);
+$entityManager = EntityManager::create($connections['sqlite'], $config);
 
 return $entityManager;
