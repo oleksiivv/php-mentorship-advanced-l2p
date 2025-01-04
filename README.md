@@ -8,7 +8,7 @@ docker-compose up -d --build
 To create tables, update src/config/bootstrap.php with your database credentials and run the following command:
 
 ```bash
-php mysql_migrate.php
+php mysql_migration.php
 ```
 
 Afterwards, open a web browser and navigate to:
@@ -16,6 +16,22 @@ Afterwards, open a web browser and navigate to:
 ```
 http://localhost:8080
 ```
+## Web
+### Steps
+ - Go to /auth/login and register a user with email 'admin@admin.test' so you can login as admin.
+ - After successful login as admin go to /web/products to view products and add new products.
+ - To add a new product fill form at the bottom of page and click "Create Product" button. You'll be redirected to /web/product page.
+ - To edit a product click on edit link of required product. You'll be redirected to /web/product/show?productId=id page.
+ - CSRF protection is enabled for all POST requests.
+ - AuthMiddleware with admin role restriction is enabled for all actions in admin panel.
+### General information
+ - Web is handled via `Http\Controller\WebController.php` controller. Views are located in `Views` directory.
+ - Auth pages are handled via `Http\Controller\AuthController.php` controller. Views are located in `Views` directory.
+ - Path for each page is defined in `index.php` file.
+ - To render view, return `Http\Core\Response` object from controller endpoint with view name, data array, and content type text/html.
+ - To render template inside of another template, use `renderTemplate` method from `Helpers\web_helper.php`.
+ - To ensure CSRF protection, `Http\Middlewares\CSRFMiddleware` is being used for existing requests.
+ - To ensure user authentication, `Http\Middlewares\AuthMiddleware` is being used for existing requests with required role of Admin.
 
 ## Endpoints:
 

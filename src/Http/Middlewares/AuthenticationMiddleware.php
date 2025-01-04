@@ -6,8 +6,10 @@ use Core\Container;
 use Doctrine\ORM\EntityManagerInterface;
 use Entities\User;
 use Enums\UserRole;
+use Http\Core\Cookie\CookieManager;
 use Http\Core\RequestInterface;
 use Http\Core\Response;
+use Http\Core\Session\SessionManager;
 use Psr\Http\Message\ResponseInterface;
 
 class AuthenticationMiddleware implements MiddlewareInterface
@@ -31,7 +33,10 @@ class AuthenticationMiddleware implements MiddlewareInterface
             return true;
         }
 
-        $accessToken = $request->getHeader('Authorization')[0];
+        $cookieManager = $container->get(CookieManager::class);
+        $currentUser = $cookieManager->getCurrentUser();
+
+        $accessToken = $request->getHeader('Authorization')[0] ?? $currentUser;
 
         if ($accessToken === null) {
             return false;
