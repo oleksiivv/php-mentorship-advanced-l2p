@@ -93,4 +93,27 @@ class WebController
             'accessToken' => $this->cookieManager->getCurrentUser(),
         ], 200, 'text/html', 'product.php');
     }
+
+    public function deleteProduct(Request $request): ResponseInterface
+    {
+        $inventoryId = $request->getQuery('id');
+
+        if (!$inventoryId) {
+            return new Response(['error' => 'Product ID is required'], 400);
+        }
+
+        $inventory = $this->entityManager->getRepository(Inventory::class)->find($inventoryId);
+
+        if (!$inventory) {
+            return new Response(['error' => 'Product not found'], 404);
+        }
+
+        $this->entityManager->remove($inventory);
+        $this->entityManager->flush();
+
+        return new Response([
+            'products' => $this->entityManager->getRepository(Inventory::class)->findAll(),
+            'accessToken' => $this->cookieManager->getCurrentUser(),
+        ], 200, 'text/html', 'products.php');
+    }
 }

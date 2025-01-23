@@ -84,6 +84,26 @@ class InventoryController
         return new Response($this->prepareResponse($inventory), 200);
     }
 
+    public function destroy(Request $request): Response
+    {
+        $inventoryId = $request->getQuery('id');
+
+        if (!$inventoryId) {
+            return new Response(['error' => 'Product ID is required'], 400);
+        }
+
+        $inventory = $this->entityManager->getRepository(Inventory::class)->find($inventoryId);
+
+        if (!$inventory) {
+            return new Response(['error' => 'Product not found'], 404);
+        }
+
+        $this->entityManager->remove($inventory);
+        $this->entityManager->flush();
+
+        return new Response(['message' => 'Product deleted successfully'], 200);
+    }
+
     private function prepareResponse(Inventory $inventory): array
     {
         return [

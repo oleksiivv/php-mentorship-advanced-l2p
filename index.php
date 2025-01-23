@@ -21,6 +21,7 @@ $router->addRoute('POST', '/', \Http\Controllers\PersonController::class, 'store
     new CSRFMiddleware($container->get(SessionManager::class), $container->get(CookieManager::class))
 ]);
 
+$router->addRoute('GET', '/icons', \Http\Controllers\ExternalAvatarsController::class, 'get', [new AuthenticationMiddleware([UserRole::ROLE_GUEST])]);
 
 $router->addRoute('GET', '/find', \Http\Controllers\PersonController::class, 'show', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
 
@@ -29,11 +30,14 @@ $router->addRoute('POST', '/auth/register', \Http\Controllers\AuthController::cl
 
 $router->addRoute('GET', '/auth/login', \Http\Controllers\AuthController::class, 'authPage', [new AuthenticationMiddleware([UserRole::ROLE_GUEST])]);
 
+$adminPanelMiddlewares = [new AuthenticationMiddleware([UserRole::ROLE_ADMIN]), new CSRFMiddleware($container->get(SessionManager::class), $container->get(CookieManager::class))];
+
 // Inventory routes
 $router->addRoute('GET', '/inventory', \Http\Controllers\Order\InventoryController::class, 'index', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
-$router->addRoute('POST', '/inventory', \Http\Controllers\Order\InventoryController::class, 'store', [new AuthenticationMiddleware([UserRole::ROLE_GUEST])]);
 $router->addRoute('GET', '/inventory/show', \Http\Controllers\Order\InventoryController::class, 'show', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
-$router->addRoute('PUT', '/inventory/update', \Http\Controllers\Order\InventoryController::class, 'update', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
+$router->addRoute('POST', '/inventory', \Http\Controllers\Order\InventoryController::class, 'store', $adminPanelMiddlewares);
+$router->addRoute('PUT', '/inventory/update', \Http\Controllers\Order\InventoryController::class, 'update', $adminPanelMiddlewares);
+$router->addRoute('DELETE', '/inventory/delete', \Http\Controllers\Order\InventoryController::class, 'destroy', $adminPanelMiddlewares);
 
 // Cart routes
 $router->addRoute('POST', '/cart', \Http\Controllers\Order\CartController::class, 'create', [new AuthenticationMiddleware([UserRole::ROLE_USER])]);
@@ -43,11 +47,10 @@ $router->addRoute('DELETE', '/cart/remove', \Http\Controllers\Order\CartControll
 
 // Web routes
 
-$adminPanelMiddlewares = [new AuthenticationMiddleware([UserRole::ROLE_ADMIN]), new CSRFMiddleware($container->get(SessionManager::class), $container->get(CookieManager::class))];
-
 $router->addRoute('GET', '/web/products', \Http\Controllers\Web\WebController::class, 'products', $adminPanelMiddlewares);
 $router->addRoute('POST', '/web/product', \Http\Controllers\Web\WebController::class, 'createProduct', $adminPanelMiddlewares);
 $router->addRoute('GET', '/web/product/show', \Http\Controllers\Web\WebController::class, 'showProduct', $adminPanelMiddlewares);
 $router->addRoute('POST', '/web/product/update', \Http\Controllers\Web\WebController::class, 'updateProduct', $adminPanelMiddlewares);
+$router->addRoute('DELETE', '/web/product/delete', \Http\Controllers\Web\WebController::class, 'deleteProduct', $adminPanelMiddlewares);
 
 $router->matchRoute();

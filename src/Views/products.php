@@ -10,6 +10,7 @@
         <?= 'Price: $' . $product->getPrice() ?>
         <br/>
         <a href="/web/product/show?productId=<?= $product->getId() ?>">Edit</a>
+        <a href="/web/product/delete?productId=<?= $product->getId() ?>">Edit</a>
     </div>
     <br/>
 <?php endforeach; ?>
