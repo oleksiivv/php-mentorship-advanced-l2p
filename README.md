@@ -114,3 +114,6 @@ Copy the Git Hooks: To copy the Git hooks into your local .git/hooks directory, 
 cp git_hooks/* .git/hooks/
 chmod +x .git/hooks/*
 ```
+
+## Coverage report
+<img width="1503" alt="Знімок екрана 2025-02-01 о 14 06 36" src="https://github.com/user-attachments/assets/f6eaf04b-a704-413a-8074-b7df431340c9" />
