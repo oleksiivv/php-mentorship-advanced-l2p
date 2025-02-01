@@ -4,11 +4,14 @@ To start the application, use the following Docker command:
 
 ```bash
 docker-compose up -d --build
+docker-compose exec web composer install  
+docker-compose exec web vendor/bin/phpunit tests
+docker-compose exec web vendor/bin/php-cs-fixer fix src/
 ```
 To create tables, update src/config/bootstrap.php with your database credentials and run the following command:
 
 ```bash
-php mysql_migration.php
+docker-compose exec web php mysql_migration.php
 ```
 
 Afterwards, open a web browser and navigate to:
@@ -79,12 +82,12 @@ To ensure code quality and consistency, run the following analysis tools:
 
 - **PHP CS Fixer**:
   ```bash
-  vendor/bin/php-cs-fixer src
+  composer exec --verbose php-cs-fixer fix src -- --dry-run
   ```
 
 - **PHPStan**:
   ```bash
-  vendor/bin/phpstan analyse src --level=4
+  composer exec phpstan analyse src --level=4
   ```
 
 - **SonarCloud**:
@@ -95,6 +98,13 @@ To ensure code quality and consistency, run the following analysis tools:
 To run unit tests, use the following command:
 
 ```bash
-vendor/bin/phpunit tests
+docker-compose exec web vendor/bin/phpunit tests
 ```
 
+## Committing changes:
+Copy the Git Hooks: To copy the Git hooks into your local .git/hooks directory, run the following command from the root of your project:
+
+```bash
+cp git_hooks/* .git/hooks/
+chmod +x .git/hooks/*
+```

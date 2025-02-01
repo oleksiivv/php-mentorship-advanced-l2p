@@ -18,7 +18,7 @@ class Response extends HttpMessage implements ResponseInterface
 
         if ($contentType === 'application/json') {
             $this->body = $this->createStreamFromData();
-        } else if ($contentType === 'text/html') {
+        } elseif ($contentType === 'text/html') {
             $this->body = $this->createHTMLStreamFromData($viewPath, $data);
         }
     }

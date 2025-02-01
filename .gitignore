@@ -5,3 +5,5 @@ test.txt
 .phpunit.result.cache
 composer.phar
 config/cache
+git_hooks/
+!git_hooks/pre-commit

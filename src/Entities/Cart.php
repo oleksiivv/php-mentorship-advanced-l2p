@@ -94,4 +94,3 @@ class Cart
         return $this->user;
     }
 }
-

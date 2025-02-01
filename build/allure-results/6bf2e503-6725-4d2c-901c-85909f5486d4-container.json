@@ -1,0 +1,14 @@
+{
+    "uuid": "6bf2e503-6725-4d2c-901c-85909f5486d4",
+    "name": null,
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1738408880918,
+    "stop": 1738408880918,
+    "children": [
+        "a0547f97-c0f8-44c7-9e1e-b6b07ddad6db"
+    ],
+    "befores": [],
+    "afters": [],
+    "links": []
+}

@@ -1,0 +1,43 @@
+{
+    "uuid": "a31092eb-ec6c-44b3-a7e5-b38f1c6bc713",
+    "name": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testTransferIqWithInsufficientIqPoints",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1738407440395,
+    "stop": 1738407440400,
+    "status": "passed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": null,
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "f13aab36a7467126593175cd2d367e1f",
+    "testCaseId": "2137c7eacba3e0ce7671cc5e8698c182",
+    "rerunOf": null,
+    "fullName": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest::testTransferIqWithInsufficientIqPoints",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Unit\\DesignPatterns\\Facade\\PersonIQServiceTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testTransferIqWithInsufficientIqPoints"
+        },
+        {
+            "name": "host",
+            "value": "6e5d5e0e16ba"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}
