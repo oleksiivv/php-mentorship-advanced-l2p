@@ -7,3 +7,5 @@ composer.phar
 config/cache
 git_hooks/
 !git_hooks/pre-commit
+build/allure-report/
+build/allure-results/

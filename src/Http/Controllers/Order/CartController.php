@@ -68,7 +68,7 @@ class CartController
 
         $this->entityManager->beginTransaction();
         try {
-            $cart->addInventory($inventory, $request->getRequest('quantity'));
+            $cart->addInventory($inventory->toArray(), $request->getRequest('quantity'));
             $inventory->setQuantity($inventory->getQuantity() - $request->getRequest('quantity'));
 
             $this->entityManager->persist($cart);

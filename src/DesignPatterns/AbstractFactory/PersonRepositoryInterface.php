@@ -10,7 +10,7 @@ interface PersonRepositoryInterface
     public const FS_STORAGE = 'FS';
 
     public function savePerson(Person $person): void;
-    public function readPeople(): array;
+    public function readPeople(): array|null;
     public function readPerson(string $name): Person|null;
     public function updatePersonIQ(Person $person, int $newIQ): void;
 }

@@ -101,6 +101,12 @@ To run unit tests, use the following command:
 docker-compose exec web vendor/bin/phpunit tests
 ```
 
+To run unit tests with coverage, use the following command:
+
+```bash
+vendor/bin/phpunit tests --coverage-html coverage-report/html
+```
+
 ## Committing changes:
 Copy the Git Hooks: To copy the Git hooks into your local .git/hooks directory, run the following command from the root of your project:
 
