@@ -5,7 +5,7 @@ namespace DesignPatterns\Decorator;
 use DesignPatterns\AbstractFactory\PersonRepositoryInterface;
 use Entities\Person;
 
-class UppercaseWritePersonDecorator implements PersonRepositoryInterface
+class UpperCaseWritePersonDecorator implements PersonRepositoryInterface
 {
     public function __construct(private PersonRepositoryInterface $personRepository)
     {
@@ -18,7 +18,7 @@ class UppercaseWritePersonDecorator implements PersonRepositoryInterface
 
     public function readPeople(): array
     {
-        return $this->readPeople();
+        return $this->personRepository->readPeople();
     }
 
     public function savePerson(Person $person): void

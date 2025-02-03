@@ -1,0 +1,43 @@
+{
+    "uuid": "e9b2c727-c1a7-40b4-9a31-4ade410ed079",
+    "name": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "description": null,
+    "descriptionHtml": null,
+    "start": 1738408805582,
+    "stop": 1738408806286,
+    "status": "failed",
+    "statusDetails": {
+        "known": null,
+        "muted": null,
+        "flaky": null,
+        "message": "Failed asserting that 403 matches expected 201.",
+        "trace": null
+    },
+    "stage": "finished",
+    "steps": [],
+    "attachments": [],
+    "parameters": [],
+    "historyId": "3ac070435be954fcad0b5b293c90cd44",
+    "testCaseId": "14b62e277f4d18ba8971283e43e2d8f4",
+    "rerunOf": null,
+    "fullName": "Tests\\Feature\\PersonControllerTest::testPostPersonAddsNewPerson",
+    "labels": [
+        {
+            "name": "testClass",
+            "value": "Tests\\Feature\\PersonControllerTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testPostPersonAddsNewPerson"
+        },
+        {
+            "name": "host",
+            "value": "EPUALVIW0D41"
+        },
+        {
+            "name": "thread",
+            "value": null
+        }
+    ],
+    "links": []
+}

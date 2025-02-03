@@ -124,7 +124,7 @@ class User
 
     public function removeRole(string $role): void
     {
-        $this->roles = array_filter($this->roles, fn($r) => $r !== $role);
+        $this->roles = array_filter($this->roles, fn ($r) => $r !== $role);
     }
 
     public function setAccessToken(string $accessToken): void

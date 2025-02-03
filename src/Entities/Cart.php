@@ -45,7 +45,7 @@ class Cart
 
     public function getId(): int
     {
-        return $this->id;
+        return $this->id ?? 0;
     }
 
     public function calculateTotal(): void
@@ -59,7 +59,7 @@ class Cart
 
     public function getTotal(): int
     {
-        return $this->total;
+        return $this->total ?? 0;
     }
 
     public function setInventories(array $inventories): void
@@ -94,4 +94,3 @@ class Cart
         return $this->user;
     }
 }
-

@@ -58,7 +58,6 @@ class Router
                     return $response;
                 }
             } catch (\Exception $e) {
-                dd($e);
                 match ($e->getCode()) {
                     401 => $this->notAuthorizedResponse(),
                     404 => $this->notFoundResponse(),

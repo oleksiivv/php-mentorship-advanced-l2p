@@ -59,7 +59,7 @@ class Inventory
 
     public function getName(): string
     {
-        return $this->name;
+        return $this->name ?? '';
     }
 
     public function setQuantity(int $quantity): void
@@ -69,7 +69,7 @@ class Inventory
 
     public function getQuantity(): int
     {
-        return $this->quantity;
+        return $this->quantity ?? 0;
     }
 
     public function setPrice(int $price): void
@@ -79,7 +79,7 @@ class Inventory
 
     public function getPrice(): int
     {
-        return $this->price;
+        return $this->price ?? 0;
     }
 
     public function setProvider(User $provider): void
@@ -90,5 +90,16 @@ class Inventory
     public function getProvider(): User
     {
         return $this->provider;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name ?? '',
+            'quantity' => $this->quantity ?? 0,
+            'price' => $this->price ?? 0,
+            'provider' => $this->provider ?? null,
+        ];
     }
 }
